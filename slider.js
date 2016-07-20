@@ -2,7 +2,7 @@
  * Created by nlangloi10 on 7/19/16.
  */
 
-window.onload = function () {
+window.onload = function() {
 
     // Declare app variables
     var slider = document.getElementsByClassName('slider')[0],
@@ -18,7 +18,7 @@ window.onload = function () {
         for (var i = 0; i < images.length; i += 1) {
             images[i].className = 'hideImage';
         }
-        // Add the showImage classname to the img-element you want
+        // Add the showImage class name to the img-element you want
         images[index].className = 'showImage';
     }
 
@@ -49,7 +49,7 @@ window.onload = function () {
     }
 
 
-    // give the buttons an onClick event
+    // give the buttons an onclick event
     nextBtn.onclick = nextImg;
     prevBtn.onclick = prevImg;
 
