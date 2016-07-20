@@ -1,3 +1,4 @@
+/* Initial basic slider formatting */
 body,html {
     width: 100%;
     font-family: 'Roboto';
@@ -9,6 +10,7 @@ body,html {
     margin: 0 auto 0 auto;
     position: relative;
     text-align: center;
+    min-height: 300px;
 }
 
 .slider {
@@ -32,34 +34,44 @@ img.hideImage {
 
 
 
-
+/* Revisions to pretty-up the slider */
 button:focus {
     outline: 0;
 }
 
-button.next, button.prev {
+button.next,
+button.prev {
     position: absolute;
     height: 100%;
     top: 0;
     background-color: #212121;
     color: #fff;
     border: none;
+    opacity: 0.4;
     font-size: 15px;
     font-weight: bold;
     padding: 20px;
 }
+button.next {
+    right: 0;
+}
+button.prev {
+    left: 0;
+}
 
 .slider button:hover {
-    opacity: 0.6;
+    opacity: 0.75;
     cursor: pointer;
 }
 
-.next {
-    right: 0;
-    opacity: 0.4;
-}
 
-.prev {
-    left: 0;
-    opacity: 0.4;
+
+
+
+
+div.title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
