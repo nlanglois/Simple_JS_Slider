@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <title>Image slider</title>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var slider = document.getElementsByClassName('slider')[0],
+                    images = slider.getElementsByTagName('img'),
+                    counter = 0,
+                    nextBtn = slider.getElementsByClassName('next')[0],
+                    prevBtn = slider.getElementsByClassName('prev')[0];
+
+
+            function showImage (index) {
+                // Set classname on the image-elements (hide them)
+                for (var i = 0; i < images.length; i += 1) {
+                    images[i].className = 'hideImage';
+                }
+
+                // Add the showImage classname to the img-element you want
+                images[index].className = 'showImage';
+            }
+
+
+            function nextImg () {
+                // counter variable gets the current img selected
+                // if we have the last img, we switch back to the first one again
+
+                if (counter < images.length -1) {
+                    counter += 1;
+                } else {
+                    counter = 0;
+                }
+
+                showImage(counter);
+            }
+
+
+            function prevImg () {
+                // counter variable gets the current img selected
+                // if we have the first img, we switch back to the last one again
+
+                if (counter > 0) {
+                    counter -= 1;
+                } else {
+                    counter = images.length - 1;
+                }
+
+                showImage(counter);
+            }
+
+
+            // give the buttons an onClick event
+            nextBtn.onclick = nextImg;
+            prevBtn.onclick = prevImg;
+
+
+            // start the slider
+            showImage(counter);
+
+
+        };
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <div class="wrapper">
+
+        <h2>Really simple image slider</h2>
+
+        <div class="slider">
+            <img src="https://images.unsplash.com/photo-1448960968772-b63b3f40dfc1?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375" alt="" />
+            <img src="https://images.unsplash.com/photo-1449177009399-be6867ef0505?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375" alt="" />
+            <img src="https://images.unsplash.com/photo-1451186859696-371d9477be93?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375" alt="" />
+
+
+            <button class="prev">previous</button>
+            <button class="next">next</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
